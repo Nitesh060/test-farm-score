@@ -29,7 +29,7 @@ SessionLocal = sessionmaker(
 # Base Class for all ORM Models
 # ==========================================================
 
-Base = declarative_base()
+from app.models.base import Base
 
 
 # ==========================================================
