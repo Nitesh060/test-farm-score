@@ -1,6 +1,10 @@
-from typing import Generator
+from fastapi import Depends
+from sqlalchemy.orm import Session
+
+from app.core.database import get_db
 
 
-def get_db() -> Generator:
-    """Yield a DB session. Wire this up to your SQLAlchemy SessionLocal."""
-    raise NotImplementedError
+def get_database(
+    db: Session = Depends(get_db),
+):
+    return db
